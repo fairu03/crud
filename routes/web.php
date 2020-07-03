@@ -11,6 +11,12 @@
 |
 */
 
+// use Illuminate\Routing\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/items/create', 'ItemController@create'); //mebuat data
+Route::post('/items', 'ItemController@store'); //menimpan data
+Route::get('/items', 'ItemController@index'); //menampilkan hasil input data

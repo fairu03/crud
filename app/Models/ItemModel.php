@@ -13,6 +13,7 @@ class ItemModel
         return $items;
     }
     public static function save($data)
+    //untuk menyimpan data ditable items
     {
         $new_item = DB::table('items')->insert($data);
         return $new_item;
