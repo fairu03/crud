@@ -7,19 +7,20 @@ use App\Models\ItemModel;
 
 class ItemController extends Controller
 {
-    public function create()
+    public function create() //fungsi untuk mengcreate data
     {
-        return view('item.form');
+        return view('items.form');
     }
-    public function store(Request $request)
+    public function store(Request $request) //fungsi untuk simpan data
     {
         $new_items = ItemModel::save($request->all());
 
-        return redirect('/items';)
+        return redirect('/items');
     }
-    public function index(){
+    public function index() //fungsi menampilkan data
+    {
         $items = ItemModel::get_all();
 
-        return view('item.index');
+        return view('items.index');
     }
 }

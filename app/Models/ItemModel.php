@@ -14,7 +14,11 @@ class ItemModel
     }
     public static function save($data)
     //untuk menyimpan data ditable items
+
+
     {
+        //sebelum disimpan bawaan _token kita hilangkan dulu
+        unset($data["_token"]);
         $new_item = DB::table('items')->insert($data);
         return $new_item;
     }
