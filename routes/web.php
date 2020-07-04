@@ -23,3 +23,7 @@ Route::get('/', function () {
 Route::get('/items/create', 'ItemController@create'); //mebuat data
 Route::post('/items', 'ItemController@store'); //menimpan data
 Route::get('/items', 'ItemController@index'); //menampilkan hasil input data
+Route::get('/items/{id}', 'ItemController@show'); // manampilkan detail item
+Route::get('items/{id}/edit', 'ItemController@edit'); //menampilkan datail data untuk diedit.
+Route::put('/items/{id}', 'ItemController@update'); //menyimpan perubahan data
+Route::delete('/items/{id}', 'ItemController@destroy');//menghapus data

@@ -28,7 +28,13 @@ Creat New Item
         <td>{{$item->price}}</td>
         <td>{{$item->stock}}</td>
         <td>
-            <a href="#" class="btn btn-sm btn-info">Show</a>
+        <a href="/items/{{$item->id}}" class="btn btn-sm btn-info">Show</a>
+        <a href="/items/{{$item->id}}/edit" class="btn btn-sm btn-default">Edit</a>
+        <form action="/items/{{$item->id}}" method="post" style="display:inline">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+      </form>
         </td>
         </tr>
     @endforeach
