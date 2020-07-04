@@ -14,8 +14,6 @@ class ItemModel
     }
     public static function save($data)
     //untuk menyimpan data ditable items
-
-
     {
         //sebelum disimpan bawaan _token kita hilangkan dulu
         unset($data["_token"]);

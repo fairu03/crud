@@ -21,6 +21,6 @@ class ItemController extends Controller
     {
         $items = ItemModel::get_all();
 
-        return view('items.index');
+        return view('items.index', compact('items'));
     }
 }
