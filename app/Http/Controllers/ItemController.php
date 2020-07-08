@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ItemModel;
+use App\CategoryModel;
 
 class ItemController extends Controller
 {
     public function create() //fungsi untuk mengcreate data
     {
-        return view('items.form');
+        $categories = CategoryModel::all();
+        return view('items.form', compact('categories'));
     }
     public function store(Request $request) //fungsi untuk simpan data
     {

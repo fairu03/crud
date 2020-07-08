@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\DB;
 
 class ItemModel
 {
+    protected $table = "items";
+    protected $guarded = [];
+
     public static function get_all()
     {
         //untuk mendapatkan seluruh data
@@ -34,6 +37,8 @@ class ItemModel
                 'description' => $request["description"],
                 'price' => $request["price"],
                 'stock' => $request["stock"],
+                'category_id' => $request["category_id"]
+
             ]);
         return $item;
     }

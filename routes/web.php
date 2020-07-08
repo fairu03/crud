@@ -15,6 +15,7 @@
 
 use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
+use App\CategoryModel;
 
 Route::get('/', function () {
     return view('welcome');
@@ -26,4 +27,7 @@ Route::get('/items', 'ItemController@index'); //menampilkan hasil input data
 Route::get('/items/{id}', 'ItemController@show'); // manampilkan detail item
 Route::get('items/{id}/edit', 'ItemController@edit'); //menampilkan datail data untuk diedit.
 Route::put('/items/{id}', 'ItemController@update'); //menyimpan perubahan data
-Route::delete('/items/{id}', 'ItemController@destroy');//menghapus data
+Route::delete('/items/{id}', 'ItemController@destroy'); //menghapus data
+// route untuk table categories
+
+Route::resource('categories', 'CategoryController');//sekumpulan root untuk crud

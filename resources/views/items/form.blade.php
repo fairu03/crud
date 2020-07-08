@@ -26,6 +26,14 @@
                     <label for="stock">Stock</label>
                     <input type="number" class="form-control" id="stock" name="stock" placeholder="Stock ">
                   </div>
+                  <div class="form-group">
+                    <label for="category_id">Kategori</label>
+                    <select name="category_id" id="category_id" class="form-control">
+                      @foreach ($categories as $category)
+                    <option value="{{$category->id}}">{{$category->name}}</option>
+                      @endforeach
+                    </select>
+                  </div>
               </div>
               <!-- /.card-body -->
 
